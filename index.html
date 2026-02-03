@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -18,7 +19,6 @@
             scroll-behavior: smooth;
         }
 
-        /* Header Styles */
         header {
             position: fixed;
             top: 0;
@@ -75,7 +75,6 @@
             cursor: pointer;
         }
 
-        /* Hero Section */
         #hero {
             min-height: 100vh;
             display: flex;
@@ -186,7 +185,6 @@
             animation: bounce 2s infinite;
         }
 
-        /* Section Styles */
         section {
             padding: 5rem 0;
         }
@@ -204,7 +202,6 @@
             margin: 0 auto 3rem;
         }
 
-        /* About Section */
         #about {
             background: white;
         }
@@ -269,7 +266,6 @@
             color: #64748b;
         }
 
-        /* Skills Section */
         #skills {
             background: #f8fafc;
         }
@@ -346,7 +342,6 @@
             transition: width 1s ease-out;
         }
 
-        /* Projects Section */
         #projects {
             background: white;
         }
@@ -475,7 +470,6 @@
             background: #0891b2;
         }
 
-        /* Contact Section */
         #contact {
             background: #f8fafc;
         }
@@ -593,7 +587,6 @@
             background: #1e293b;
         }
 
-        /* Footer */
         footer {
             background: #0f172a;
             color: white;
@@ -663,7 +656,6 @@
             color: #94a3b8;
         }
 
-        /* Animations */
         @keyframes fadeInUp {
             from {
                 opacity: 0;
@@ -684,7 +676,6 @@
             }
         }
 
-        /* Toast Notification */
         .toast {
             position: fixed;
             bottom: 2rem;
@@ -705,7 +696,6 @@
             opacity: 1;
         }
 
-        /* Responsive Design */
         @media (max-width: 768px) {
             .hero-content h1 {
                 font-size: 2.5rem;
@@ -743,7 +733,7 @@
     </style>
 </head>
 <body>
-    <!-- Header -->
+
     <header>
         <div class="container">
             <div class="header-content">
@@ -759,7 +749,6 @@
         </div>
     </header>
 
-    <!-- Hero Section -->
     <section id="hero">
         <div class="container">
             <div class="hero-content">
@@ -790,7 +779,6 @@
         </div>
     </section>
 
-    <!-- About Section -->
     <section id="about">
         <div class="container">
             <h2 class="section-title">About Me</h2>
@@ -837,7 +825,6 @@
         </div>
     </section>
 
-    <!-- Skills Section -->
     <section id="skills">
         <div class="container">
             <h2 class="section-title">Skills & Expertise</h2>
@@ -854,7 +841,6 @@
         </div>
     </section>
 
-    <!-- Projects Section -->
     <section id="projects">
         <div class="container">
             <h2 class="section-title">Featured Projects</h2>
@@ -872,7 +858,6 @@
         </div>
     </section>
 
-    <!-- Contact Section -->
     <section id="contact">
         <div class="container">
             <h2 class="section-title">Get In Touch</h2>
@@ -971,11 +956,10 @@
         </div>
     </footer>
 
-    <!-- Toast Notification -->
     <div class="toast" id="toast"></div>
 
     <script>
-        // Data
+
         const skills = [
             { name: "HTML", level: 90, category: "frontend" },
             { name: "CSS", level: 90, category: "frontend" },
@@ -1044,7 +1028,6 @@
             }
         ];
 
-        // Skills Filter
         let currentSkillFilter = 'all';
         
         function renderSkills() {
@@ -1075,7 +1058,7 @@
             });
         });
 
-        // Projects Filter
+
         let currentProjectFilter = 'all';
         
         function renderProjects() {
@@ -1118,7 +1101,6 @@
             });
         });
 
-        // Contact Form
         document.getElementById('contactForm').addEventListener('submit', (e) => {
             e.preventDefault();
             
@@ -1128,15 +1110,12 @@
                 message: document.getElementById('message').value
             };
             
-            // Store in localStorage (will be replaced with backend later)
             const submissions = JSON.parse(localStorage.getItem('contactSubmissions') || '[]');
             submissions.push({ ...formData, timestamp: new Date().toISOString() });
             localStorage.setItem('contactSubmissions', JSON.stringify(submissions));
             
-            // Show toast
             showToast('Message sent! Thank you for reaching out. I\'ll get back to you soon!');
             
-            // Reset form
             document.getElementById('contactForm').reset();
         });
 
@@ -1150,7 +1129,6 @@
             }, 3000);
         }
 
-        // Smooth scrolling for navigation
         document.querySelectorAll('a[href^=\"#\"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
@@ -1161,11 +1139,9 @@
             });
         });
 
-        // Initialize
         renderSkills();
         renderProjects();
 
-        // Header scroll effect
         let lastScroll = 0;
         window.addEventListener('scroll', () => {
             const header = document.querySelector('header');
